@@ -31,6 +31,15 @@
             @csrf
             <button type="submit" class="btn btn-secondary">凶が出やすいおみくじを引く</button>
         </form>
+        <form action="{{ route('omikuji.reset') }}" method="post" onsubmit="return confirm('本当にリセットしますか？')">
+            @csrf
+            <button type="submit" class="btn btn-danger">リセット</button>
+        </form>
+        @if (session('status'))
+        <div class="alert alert-success">
+            {{ session('status') }}
+        </div>
+        @endif
         <h2>過去の結果</h2>
         <table class="table">
             <thead>

@@ -46,4 +46,9 @@ class OmikujiController extends Controller
             'message' => $this->getResultMessage($result),
         ]);
     }
+    public function reset()
+    {
+        Omikuji::truncate();
+        return redirect()->route('omikuji.index')->with('status', 'リセットしました。');
+    }
 }
