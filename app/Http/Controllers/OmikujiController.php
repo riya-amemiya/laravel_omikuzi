@@ -15,11 +15,11 @@ class OmikujiController extends Controller
     public function __construct()
     {
         $this->omikujiProbabilities = [
-            'default' => new OmikujiProbability('default', 10, 30, 50, 10),
-            'great' => new OmikujiProbability('great', 50, 30, 15, 5),
-            'middle' => new OmikujiProbability('middle', 20, 40, 30, 10),
-            'small' => new OmikujiProbability('small', 5, 25, 60, 10),
-            'bad' => new OmikujiProbability('bad', 1, 9, 30, 60),
+            'default' => new OmikujiProbability(10, 30, 50, 10),
+            'great' => new OmikujiProbability(50, 30, 15, 5),
+            'middle' => new OmikujiProbability(20, 40, 30, 10),
+            'small' => new OmikujiProbability(5, 25, 60, 10),
+            'bad' => new OmikujiProbability(1, 9, 30, 60),
         ];
     }
 

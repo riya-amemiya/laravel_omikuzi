@@ -4,24 +4,17 @@ namespace App\Models;
 
 class OmikujiProbability
 {
-    private $page;
     private $probabilityGreatLuck;
     private $probabilityMiddleLuck;
     private $probabilitySmallLuck;
     private $probabilityBadLuck;
 
-    public function __construct($page, $probabilityGreatLuck, $probabilityMiddleLuck, $probabilitySmallLuck, $probabilityBadLuck)
+    public function __construct($probabilityGreatLuck, $probabilityMiddleLuck, $probabilitySmallLuck, $probabilityBadLuck)
     {
-        $this->page = $page;
         $this->probabilityGreatLuck = $probabilityGreatLuck;
         $this->probabilityMiddleLuck = $probabilityMiddleLuck;
         $this->probabilitySmallLuck = $probabilitySmallLuck;
         $this->probabilityBadLuck = $probabilityBadLuck;
-    }
-
-    public function getPage()
-    {
-        return $this->page;
     }
 
     public function getProbabilityGreatLuck()
