@@ -2,15 +2,45 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-class OmikujiProbability extends Model
+class OmikujiProbability
 {
-    protected $fillable = [
-        'page',
-        'probability_great_luck',
-        'probability_middle_luck',
-        'probability_small_luck',
-        'probability_bad_luck',
-    ];
+    private $page;
+    private $probabilityGreatLuck;
+    private $probabilityMiddleLuck;
+    private $probabilitySmallLuck;
+    private $probabilityBadLuck;
+
+    public function __construct($page, $probabilityGreatLuck, $probabilityMiddleLuck, $probabilitySmallLuck, $probabilityBadLuck)
+    {
+        $this->page = $page;
+        $this->probabilityGreatLuck = $probabilityGreatLuck;
+        $this->probabilityMiddleLuck = $probabilityMiddleLuck;
+        $this->probabilitySmallLuck = $probabilitySmallLuck;
+        $this->probabilityBadLuck = $probabilityBadLuck;
+    }
+
+    public function getPage()
+    {
+        return $this->page;
+    }
+
+    public function getProbabilityGreatLuck()
+    {
+        return $this->probabilityGreatLuck;
+    }
+
+    public function getProbabilityMiddleLuck()
+    {
+        return $this->probabilityMiddleLuck;
+    }
+
+    public function getProbabilitySmallLuck()
+    {
+        return $this->probabilitySmallLuck;
+    }
+
+    public function getProbabilityBadLuck()
+    {
+        return $this->probabilityBadLuck;
+    }
 }
