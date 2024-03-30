@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Omikuji;
-use App\Models\OmikujiProbability;
+use App\Services\OmikujiProbability;
 use App\Traits\OmikujiMessage;
 
 class OmikujiController extends Controller
@@ -16,10 +16,10 @@ class OmikujiController extends Controller
     {
         $this->omikujiProbabilities = [
             'default' => new OmikujiProbability(10, 30, 50, 10),
-            'great' => new OmikujiProbability(50, 30, 15, 5),
-            'middle' => new OmikujiProbability(20, 40, 30, 10),
-            'small' => new OmikujiProbability(5, 25, 60, 10),
-            'bad' => new OmikujiProbability(1, 9, 30, 60),
+            'great' => new OmikujiProbability(70, 20, 5, 5),
+            'middle' => new OmikujiProbability(20, 70, 5, 5),
+            'small' => new OmikujiProbability(10, 5, 70, 15),
+            'bad' => new OmikujiProbability(5, 5, 20, 70),
         ];
     }
 
