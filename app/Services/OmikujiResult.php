@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Traits;
+namespace App\Services;
 
-trait OmikujiMessage
+class OmikujiResult
 {
-    public function getResultMessage($result)
+
+    public function getMessage($result)
     {
         switch ($result) {
             case '大吉':

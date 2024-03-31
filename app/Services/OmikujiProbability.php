@@ -4,36 +4,28 @@ namespace App\Services;
 
 class OmikujiProbability
 {
-    private $probabilityGreatLuck;
-    private $probabilityMiddleLuck;
-    private $probabilitySmallLuck;
-    private $probabilityBadLuck;
+    private $probabilities;
 
-    public function __construct($probabilityGreatLuck, $probabilityMiddleLuck, $probabilitySmallLuck, $probabilityBadLuck)
+    public function __construct($probabilities)
     {
-        $this->probabilityGreatLuck = $probabilityGreatLuck;
-        $this->probabilityMiddleLuck = $probabilityMiddleLuck;
-        $this->probabilitySmallLuck = $probabilitySmallLuck;
-        $this->probabilityBadLuck = $probabilityBadLuck;
+        $this->probabilities = $probabilities;
     }
 
-    public function getProbabilityGreatLuck()
+    public function getProbabilities()
     {
-        return $this->probabilityGreatLuck;
+        return $this->probabilities;
     }
 
-    public function getProbabilityMiddleLuck()
+    public function getResult()
     {
-        return $this->probabilityMiddleLuck;
-    }
+        $rand = random_int(1, 100);
+        $cumulativeProbability = 0;
 
-    public function getProbabilitySmallLuck()
-    {
-        return $this->probabilitySmallLuck;
-    }
-
-    public function getProbabilityBadLuck()
-    {
-        return $this->probabilityBadLuck;
+        foreach ($this->probabilities as $result => $probability) {
+            $cumulativeProbability += $probability;
+            if ($rand <= $cumulativeProbability) {
+                return $result;
+            }
+        }
     }
 }
