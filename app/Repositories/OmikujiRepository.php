@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Traits;
+namespace App\Repositories;
 
 use App\Models\Omikuji;
 

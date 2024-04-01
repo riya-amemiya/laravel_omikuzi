@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services;
+namespace App\Traits;
 
-class OmikujiResult
+trait OmikujiResult
 {
 
     public function getMessage($result)

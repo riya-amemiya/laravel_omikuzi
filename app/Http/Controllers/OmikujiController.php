@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Traits\OmikujiRepository;
+use App\Repositories\OmikujiRepository;
 use App\Services\OmikujiProbability;
-use App\Services\OmikujiResult;
+use App\Traits\OmikujiResult;
 
 class OmikujiController extends Controller
 {
     use OmikujiRepository;
+    use OmikujiResult;
 
     private $omikujiProbabilities;
     private $omikujiResult;
 
-    public function __construct(OmikujiResult $omikujiResult)
+    public function __construct()
     {
         $this->omikujiProbabilities = [
             'default' => new OmikujiProbability(['大吉' => 10, '中吉' => 30, '小吉' => 50, '凶' => 10]),
@@ -22,7 +23,6 @@ class OmikujiController extends Controller
             'small' => new OmikujiProbability(['大吉' => 10, '中吉' => 5, '小吉' => 70, '凶' => 15]),
             'bad' => new OmikujiProbability(['大吉' => 5, '中吉' => 5, '小吉' => 20, '凶' => 70]),
         ];
-        $this->omikujiResult = $omikujiResult;
     }
 
     public function index()
@@ -46,7 +46,7 @@ class OmikujiController extends Controller
         return view('omikuji.result', [
             'result' => $result,
             'page' => $page,
-            'message' => $this->omikujiResult->getMessage($result),
+            'message' => $this->getMessage($result),
         ]);
     }
 
