@@ -8,6 +8,10 @@ class OmikujiProbability
 
     public function __construct($probabilities)
     {
+        // 合計が100じゃない場合は例外を投げる
+        if (array_sum($probabilities) !== 100) {
+            throw new \Exception('The sum of probabilities must be 100.');
+        }
         $this->probabilities = $probabilities;
     }
 

@@ -20,4 +20,11 @@ class OmikujiProbabilityTest extends TestCase
         $omikujiProbability = new OmikujiProbability($probabilities);
         $this->assertEquals('大吉', $omikujiProbability->getResult());
     }
+
+    public function testSumOfProbabilitiesIsNot100()
+    {
+        $this->expectException(\Exception::class);
+        $probabilities = ['大吉' => 10, '中吉' => 30, '小吉' => 50, '凶' => 20];
+        new OmikujiProbability($probabilities);
+    }
 }
