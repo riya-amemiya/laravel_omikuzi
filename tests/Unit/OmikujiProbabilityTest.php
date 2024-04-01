@@ -3,7 +3,7 @@
 namespace Tests\Unit;
 
 use App\Services\OmikujiProbability;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 class OmikujiProbabilityTest extends TestCase
 {

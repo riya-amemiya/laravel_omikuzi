@@ -3,7 +3,7 @@
 namespace Tests\Unit;
 
 use App\Traits\OmikujiResult;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 class OmikujiResultTest extends TestCase
 {
